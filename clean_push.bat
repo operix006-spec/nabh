@@ -6,7 +6,7 @@ echo ===================================================
 echo.
 
 git add -A
-git commit -m "fix: remove mock ambient module overrides that broke lucide and react types"
+git commit -m "fix: provide solid fallback supabase credentials for CI build"
 git push -u origin main
 
 if %ERRORLEVEL% NEQ 0 (
