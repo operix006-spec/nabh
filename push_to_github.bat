@@ -13,6 +13,8 @@ if not exist .git (
     echo [1/5] Git repository already initialized.
 )
 
+if exist next.config.mjs del next.config.mjs >nul 2>&1
+
 echo [2/5] Setting up remote origin...
 git remote remove origin >nul 2>&1
 git remote add origin https://operix006-spec@github.com/operix006-spec/nabh.git
