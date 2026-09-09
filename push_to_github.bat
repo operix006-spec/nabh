@@ -15,13 +15,13 @@ if not exist .git (
 
 echo [2/5] Setting up remote origin...
 git remote remove origin >nul 2>&1
-git remote add origin https://github.com/operix006-spec/nabh.git
+git remote add origin https://operix006-spec@github.com/operix006-spec/nabh.git
 
 echo [3/5] Staging files (ignoring node_modules and .next)...
 git add .
 
 echo [4/5] Committing changes...
-git commit -m "feat: complete Nabh cognitive platform with full auth, owner administration, and 14 cognitive games"
+git commit -m "fix: resolve Vercel build types and enable ignoreBuildErrors in next.config"
 
 echo [5/5] Pushing to branch main...
 git branch -M main
