@@ -31,7 +31,7 @@ import {
   X,
   Command,
   CornerDownLeft,
-  BookOpen,
+  Book,
 } from 'lucide-react';
 
 interface QuickNavItem {
@@ -63,7 +63,7 @@ export const GlobalQuickNav: React.FC = () => {
     { id: 'dash', category: 'core', titleAr: 'لوحة التحكم الرئيسية', titleEn: 'Main Dashboard', href: '/dashboard', icon: Brain, shortcut: 'D' },
     { id: 'games', category: 'core', titleAr: 'صالة الألعاب الذهنية الـ 12', titleEn: '12 Games Arcade Hub', href: '/games', icon: Gamepad2, badge: '12 Games', shortcut: 'G' },
     { id: 'roadmap', category: 'core', titleAr: 'شجرة ومسار الـ 50 مهارة', titleEn: '50-Skill Roadmap Tree', href: '/roadmap', icon: Map, badge: 'Khan Mastery', shortcut: 'R' },
-    { id: 'skills', category: 'core', titleAr: 'موسوعة المهارات الـ 50', titleEn: '50 Skills Catalog', href: '/skills', icon: BookOpen, badge: '50 Skills', shortcut: 'S' },
+    { id: 'skills', category: 'core', titleAr: 'موسوعة المهارات الـ 50', titleEn: '50 Skills Catalog', href: '/skills', icon: Book, badge: '50 Skills', shortcut: 'S' },
     { id: 'assessment', category: 'core', titleAr: 'اختبار التقييم المعياري الشامل', titleEn: 'Psychometric Assessment Battery', href: '/assessment', icon: Compass, badge: 'NCI Cert' },
     { id: 'reports', category: 'core', titleAr: 'التقارير الإدراكية والسريرية', titleEn: 'Clinical CHC Reports', href: '/reports', icon: FileText, badge: 'AI Report' },
     { id: 'progress', category: 'core', titleAr: 'تحليلات النمو وسرعة التطور', titleEn: 'Progress & Velocity Curves', href: '/progress', icon: Activity },
@@ -93,7 +93,7 @@ export const GlobalQuickNav: React.FC = () => {
     { id: 'settings', category: 'system', titleAr: 'الإعدادات والسمات البصرية', titleEn: 'Settings & Appearance', href: '/settings', icon: Settings },
     { id: 'notifications', category: 'system', titleAr: 'مركز الإشعارات والتنبيهات', titleEn: 'Notifications Center', href: '/notifications', icon: Bell },
     { id: 'pricing', category: 'system', titleAr: 'الباقات والاشتراكات', titleEn: 'Pricing Plans', href: '/pricing', icon: Sparkles },
-    { id: 'support', category: 'system', titleAr: 'الدعم والمساعدة والأسئلة الشائعة', titleEn: 'Support & Knowledge Base', href: '/support', icon: BookOpen },
+    { id: 'support', category: 'system', titleAr: 'الدعم والمساعدة والأسئلة الشائعة', titleEn: 'Support & Knowledge Base', href: '/support', icon: Book },
     { id: 'contact', category: 'system', titleAr: 'تواصل مع فريق نَبِـه', titleEn: 'Contact Us', href: '/contact', icon: Sparkles },
   ];
 

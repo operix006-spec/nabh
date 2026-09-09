@@ -9,7 +9,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PostGameResultsModal } from '@/components/games/PostGameResultsModal';
 import { GameSessionTelemetry } from '@/types/cognitive';
-import { BookOpen, Flame, Sparkles, Send } from 'lucide-react';
+import { Book, Flame, Sparkles, Send } from 'lucide-react';
 
 interface WordLoomGameProps {
   onComplete?: (score: number) => void;
@@ -156,7 +156,7 @@ export const WordLoomGame: React.FC<WordLoomGameProps> = ({
       <div className="flex items-center justify-between p-4 rounded-3xl bg-card border border-border/60 shadow-soft">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-500">
-            <BookOpen className="h-5 w-5" />
+            <Book className="h-5 w-5" />
           </div>
           <div>
             <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">

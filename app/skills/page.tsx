@@ -19,7 +19,7 @@ import {
   ArrowRight,
   ArrowLeft,
   Sparkles,
-  BookOpen,
+  Book,
   Filter,
   Lock,
   Unlock,
@@ -251,7 +251,7 @@ export default function SkillsDirectoryPage() {
 
                     <Link href={`/skills/${skill.id}`}>
                       <Button size="sm" variant="outline" className="rounded-xl font-bold text-xs" title={t('viewDetails')}>
-                        <BookOpen className="h-3.5 w-3.5" />
+                        <Book className="h-3.5 w-3.5" />
                       </Button>
                     </Link>
                   </div>

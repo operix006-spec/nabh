@@ -12,7 +12,7 @@ import {
   Cpu,
   Shuffle,
   Box,
-  BookOpen,
+  Book,
   Layers,
   Sparkles,
   Eye,
@@ -35,7 +35,7 @@ const GAME_SWITCHER_LIST = [
   { id: 'sequence-game', nameAr: 'تسلسل الذاكرة', nameEn: 'Sequence Game', icon: RotateCw },
   { id: 'logic-puzzle', nameAr: 'الاستدلال المنطقي', nameEn: 'Logic Puzzle', icon: Scale },
   { id: 'task-switcher', nameAr: 'التبديل التنفيذي', nameEn: 'Task Switcher', icon: Shuffle },
-  { id: 'word-loom', nameAr: 'الطلاقة اللفظية', nameEn: 'Word Loom', icon: BookOpen },
+  { id: 'word-loom', nameAr: 'الطلاقة اللفظية', nameEn: 'Word Loom', icon: Book },
 ];
 
 export default function GameArenaPage() {

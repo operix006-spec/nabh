@@ -25,7 +25,6 @@ import {
   ArrowLeft,
   Award,
   Sparkles,
-  BookOpen,
   Activity,
   CheckCircle2,
   Lock,

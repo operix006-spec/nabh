@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import {
   HelpCircle,
   Search,
-  BookOpen,
+  Book,
   Zap,
   Brain,
   ShieldCheck,
@@ -30,7 +30,7 @@ export default function SupportPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
   const categories = [
-    { id: 'all', labelAr: 'جميع الموضوعات', labelEn: 'All Topics', icon: BookOpen },
+    { id: 'all', labelAr: 'جميع الموضوعات', labelEn: 'All Topics', icon: Book },
     { id: 'start', labelAr: 'البداية والتقييم', labelEn: 'Getting Started', icon: Brain },
     { id: 'scoring', labelAr: 'النقاط ومؤشر NCI', labelEn: 'NCI & Scoring', icon: Zap },
     { id: 'billing', labelAr: 'الاشتراكات والحساب', labelEn: 'Billing & Accounts', icon: CreditCard },
