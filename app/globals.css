@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 248 100% 99%;
+    --foreground: 232 47% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 232 47% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 232 47% 12%;
+
+    --primary: 244 100% 69%;       /* #6C63FF - NABH Signature Indigo */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 258 90% 66%;     /* #8B5CF6 - Electric Violet */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 164 100% 45%;       /* #00E5A8 - Vibrant Mint/Emerald */
+    --accent-foreground: 232 47% 12%;
+
+    --muted: 245 40% 96%;
+    --muted-foreground: 240 15% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 245 30% 91%;
+    --input: 245 30% 91%;
+    --ring: 244 100% 69%;
+
+    --radius: 1.5rem;
+  }
+
+  .dark {
+    --background: 252 50% 4%;     /* Midnight Deep Violet Space */
+    --foreground: 240 30% 96%;
+
+    --card: 250 40% 7%;
+    --card-foreground: 240 30% 96%;
+
+    --popover: 250 40% 7%;
+    --popover-foreground: 240 30% 96%;
+
+    --primary: 244 100% 69%;       /* #6C63FF */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 258 90% 66%;     /* #8B5CF6 */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 164 100% 45%;       /* #00E5A8 */
+    --accent-foreground: 252 50% 4%;
+
+    --muted: 250 30% 12%;
+    --muted-foreground: 245 20% 65%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 30% 15%;
+    --input: 250 30% 15%;
+    --ring: 244 100% 69%;
+  }
+
+  .high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --border: 0 0% 0%;
+    --primary: 240 100% 50%;
+  }
+
+  .dark.high-contrast {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --border: 0 0% 100%;
+    --primary: 240 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', 'Outfit', 'Cairo', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* Modern Arabic Typography System */
+  [dir="rtl"] body,
+  [dir="rtl"] input,
+  [dir="rtl"] select,
+  [dir="rtl"] textarea,
+  [dir="rtl"] button {
+    font-family: 'Tajawal', 'Alexandria', 'Cairo', system-ui, -apple-system, sans-serif;
+    letter-spacing: normal !important;
+  }
+  
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] .font-heading {
+    font-family: 'Alexandria', 'Tajawal', 'Cairo', system-ui, sans-serif;
+    letter-spacing: normal !important;
+    font-weight: 700;
+  }
+}
+
+/* ==========================================================================
+   1. APPLE-GRADE GLASSMORPHISM & SPECULAR HIGHLIGHTS
+   ========================================================================== */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255,255,255,0.05) inset;
+}
+
+.apple-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  border-radius: 1.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .apple-card {
+  background: rgba(18, 26, 47, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.55), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+
+.apple-card:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 24px 48px -12px rgba(99, 102, 241, 0.18), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Apple Ambient Mesh Background */
+.bg-apple-mesh {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 50%);
+}
+
+.dark .bg-apple-mesh {
+  background-color: #030712;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.22) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.22) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.12) 0px, transparent 50%);
+}
+
+/* ==========================================================================
+   2. DUOLINGO-GRADE TACTILE 3D BUTTONS & JOY INTERACTIONS
+   ========================================================================== */
+.btn-3d {
+  position: relative;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom-width: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-3d:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn-3d:active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+.btn-3d-primary {
+  border-bottom-color: rgba(67, 56, 202, 0.95);
+}
+.btn-3d-emerald {
+  border-bottom-color: rgba(4, 120, 87, 0.95);
+}
+.btn-3d-amber {
+  border-bottom-color: rgba(180, 83, 9, 0.95);
+}
+.btn-3d-rose {
+  border-bottom-color: rgba(190, 18, 60, 0.95);
+}
+.btn-3d-sky {
+  border-bottom-color: rgba(3, 105, 161, 0.95);
+}
+.btn-3d-violet {
+  border-bottom-color: rgba(109, 40, 217, 0.95);
+}
+
+/* Sheen sweep animation */
+.shine-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-sheen::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(30deg) translateY(-100%);
+  animation: sheen-sweep 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+@keyframes sheen-sweep {
+  0% {
+    transform: rotate(30deg) translateY(-100%);
+  }
+  30% {
+    transform: rotate(30deg) translateY(100%);
+  }
+  100% {
+    transform: rotate(30deg) translateY(100%);
+  }
+}
+
+/* Floating Animation */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 4s ease-in-out 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ==========================================================================
+   3. KHAN ACADEMY MASTERY RIGOR & PROGRESS INDICATORS
+   ========================================================================== */
+.khan-mastery-bar {
+  position: relative;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: hsl(var(--muted));
+  overflow: hidden;
+}
+
+.khan-mastery-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366F1, #8B5CF6, #10B981);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Typography Gradient Headers */
+.gradient-text {
+  background: linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #EAB308 50%, #F97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #10B981 0%, #14B8A6 50%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glowing Card Effect */
+.glow-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.22);
+}
+
+/* Skeleton Shimmer */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background-color: hsl(var(--muted) / 0.7);
+}
+
+.skeleton-shimmer::after {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 1.8s infinite;
+  content: '';
+}
+
+.dark .skeleton-shimmer::after {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.04) 20%,
+    rgba(255, 255, 255, 0.08) 60%,
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.45);
+}
+
+/* ==========================================================================
+   4. $50M STARTUP AESTHETICS (APPLE × LINEAR × STRIPE × DUOLINGO)
+   ========================================================================== */
+.shadow-floating {
+  box-shadow: 0 24px 60px -12px rgba(108, 99, 255, 0.18), 0 0 24px 0 rgba(139, 92, 246, 0.08);
+}
+
+.dark .shadow-floating {
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(108, 99, 255, 0.25);
+}
+
+.shadow-glow-primary {
+  box-shadow: 0 0 45px -5px rgba(108, 99, 255, 0.45);
+}
+
+.shadow-glow-accent {
+  box-shadow: 0 0 40px -5px rgba(0, 229, 168, 0.45);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 20px -2px rgba(108, 99, 255, 0.08);
+}
+
+.dark .glass-pill {
+  background: rgba(18, 16, 38, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-bounce {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
+}
+.btn-bounce:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+.btn-bounce:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ==========================================================================
+   5. CROSS-DEVICE & MOBILE UI/UX PERFECTION (APPLE HIG & RESPONSIVE STANDARDS)
+   ========================================================================== */
+/* Touch targets & interaction fidelity */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS and Android Safe Area Insets */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+.pb-safe {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+}
+.pt-safe {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 1rem);
+}
+
+/* Global viewport boundary protection against horizontal blowout on mobile */
+html, body {
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Smooth inertia scrolling on mobile devices */
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbars elegantly while preserving scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive card grid layout engine */
+@media (max-width: 640px) {
+  .mobile-compact-card {
+    padding: 1rem !important;
+    border-radius: 1.25rem !important;
+  }
+}
+
+
