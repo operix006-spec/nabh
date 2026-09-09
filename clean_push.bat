@@ -6,7 +6,7 @@ echo ===================================================
 echo.
 
 git add -A
-git commit -m "fix: provide solid fallback supabase credentials for CI build"
+git commit -m "fix: upgrade Next.js to latest patched version to resolve Vercel CVE security block"
 git push -u origin main
 
 if %ERRORLEVEL% NEQ 0 (
