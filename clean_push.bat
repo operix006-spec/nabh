@@ -5,8 +5,12 @@ echo   Pushing Ambient Types Fix to GitHub
 echo ===================================================
 echo.
 
+echo [1/3] Copying official brand logo to public folder...
+node copy_logo.js
+
+echo [2/3] Staging and committing logo updates...
 git add -A
-git commit -m "fix: upgrade Next.js to latest patched version to resolve Vercel CVE security block"
+git commit -m "feat: add official brand logo across navbar, footer, login, and registration"
 git push -u origin main
 
 if %ERRORLEVEL% NEQ 0 (

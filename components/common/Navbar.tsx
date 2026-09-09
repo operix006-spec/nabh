@@ -9,6 +9,7 @@ import { useSound } from '@/context/SoundContext';
 import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { NabhLogo } from '@/components/common/NabhLogo';
 import {
   Brain,
   Moon,
@@ -61,29 +62,10 @@ export const Navbar: React.FC = () => {
         {/* Brand Logo with Generous Space */}
         <Link 
           href="/" 
-          className="flex items-center gap-3.5 group shrink-0"
+          className="flex items-center group shrink-0"
           onClick={() => playSound('click')}
         >
-          <div className="relative flex h-10 sm:h-12 w-10 sm:w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#6C63FF] to-[#8B5CF6] text-white shadow-lg shadow-[#6C63FF]/30 group-hover:scale-105 transition-transform duration-300">
-            <Brain className="h-6 sm:h-7 w-6 sm:w-7 transition-transform group-hover:rotate-6" />
-            <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00E5A8] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#00E5A8] border-2 border-card"></span>
-            </span>
-          </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2">
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-foreground font-heading">
-                {language === 'ar' ? 'نَبِـه' : 'Nabh'}
-              </span>
-              <span className="text-[10px] sm:text-xs font-bold text-[#6C63FF] px-2 py-0.5 rounded-full bg-[#6C63FF]/10 font-mono">
-                Cognitive
-              </span>
-            </div>
-            <span className="text-[10px] text-muted-foreground hidden sm:inline font-medium tracking-wide">
-              {language === 'ar' ? 'منصة التدريب العصبي' : 'Neuro-Training Platform'}
-            </span>
-          </div>
+          <NabhLogo size="md" />
         </Link>
 
         {/* Desktop Navigation Links with Generous Spacing */}

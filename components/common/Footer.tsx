@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSound } from '@/context/SoundContext';
 import { Brain, Sparkles, Shield, Award, Map, Gamepad2, Layers } from 'lucide-react';
+import { NabhLogo } from '@/components/common/NabhLogo';
 
 export const Footer: React.FC = () => {
   const { language, t } = useLanguage();
@@ -18,16 +19,8 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-3" onClick={() => playSound('click')}>
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-primary to-violet-600 text-white shadow-md shadow-primary/20">
-                <Brain className="h-6 w-6" />
-              </div>
-              <span className="text-2xl font-black font-heading tracking-tight text-foreground">
-                {isRtl ? 'نَبِـه' : 'Nabh'}
-              </span>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold border border-emerald-500/20 font-mono">
-                Cognitive OS
-              </span>
+            <Link href="/" className="inline-flex items-center" onClick={() => playSound('click')}>
+              <NabhLogo size="lg" />
             </Link>
 
             <p className="text-xs sm:text-sm text-muted-foreground max-w-sm leading-relaxed">

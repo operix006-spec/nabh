@@ -10,6 +10,7 @@ import { validateRegistration, RegisterFormData } from '@/lib/validations/auth';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { NabhLogo } from '@/components/common/NabhLogo';
 import {
   Brain,
   Lock,
@@ -135,10 +136,8 @@ export default function RegisterPage() {
         
         {/* Brand Header */}
         <div className="text-center space-y-2">
-          <Link href="/" className="inline-flex items-center gap-3 group">
-            <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-[#6C63FF] to-[#8B5CF6] flex items-center justify-center text-white shadow-lg shadow-[#6C63FF]/30 group-hover:scale-105 transition-transform">
-              <Brain className="h-7 w-7" />
-            </div>
+          <Link href="/" className="inline-flex items-center group mb-2">
+            <NabhLogo size="lg" showText={false} />
           </Link>
           <h1 className="text-2xl sm:text-3xl font-black text-foreground font-heading">
             {isRtl ? 'إنشاء حساب جديد في نَبِـه' : 'Create Your Nabh Account'}
